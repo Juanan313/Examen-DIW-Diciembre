@@ -25,10 +25,30 @@
 	
 	
 /********* ADD YOUR CODE FROM HERE **********/
+.container {
+	flex-direction: row-reverse;
+}
 
-	
-	
-	
+.container div{
+	align-self: flex-end;
+	order: 1;
+}
+
+.container div:nth-child(1){
+	align-self: center;
+	color: red;
+}
+
+.container div:nth-child(3){
+	align-self: flex-start;
+	color: red;
+	order:5;
+}
+
+.container div:nth-child(4){
+	align-self: center;
+	color: blue;
+}
 	
 	
 
