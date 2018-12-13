@@ -21,20 +21,22 @@ h3 {
 }
 main {
 	grid-area: main;
+	display: grid;
+	grid-template-columns: inherit;
 }
 
-	body {
-		max-width:1000px;
-		margin:auto;
-		display: grid;
-		grid-template-columns: 33.33% 33.33% 33.33%;
-  		grid-template-rows: auto;
-  		grid-template-areas: 
-	"header header header "
-	"nav nav nav"
-    "main main main"
-    "footer footer footer ";
-	}
+body {
+	max-width:1000px;
+	margin:auto;
+	display: grid;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-template-rows: auto;
+	grid-template-areas: 
+		"header header header "
+		"nav nav nav"
+		"main main main"
+		"footer footer footer ";
+}
 
 /********** HEADER **********/
 
@@ -52,7 +54,7 @@ main {
 		display:inline-block; 
 		height:20px;
 		margin-top:25px;
-    margin-right:10px;
+    	margin-right:10px;
 	}
 	
 	header div#pop-up-menu {
@@ -62,34 +64,35 @@ main {
 /********* TOPNAV MENU *********/
 
 nav {
-  overflow: hidden;
-  background-color: #333;
-  grid-area: nav;
+	overflow: hidden;
+	background-color: #333;
+	grid-area: nav;
 }
 
 nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-size: 1.2em;
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 15px 20px;
+	text-decoration: none;
+	font-size: 1.2em;
 }
 
 
 nav a {
-		text-decoration: none;
-		text-transform: uppercase; 
+	text-decoration: none;
+	text-transform: uppercase; 
 }
 	
 /******** BANNER  *********/
 
 .banner-container {
-		height:400px;
-		overflow: hidden;
-    
-    margin-top:5px;
+	height:400px;
+	overflow: hidden;
+	margin-top:5px;
+	grid-column-start: 1;
+	grid-column-end: 4;
 }
 	
 .banner-container img {
@@ -98,22 +101,18 @@ nav a {
 
 /********* MAIN CONTENTS *********/
 
-	#main-contents {
-		width:100%;
-	}
 	
  /********** left **********/
 
 	#left {
-		width:70%;
-		float:left;
-		
+		grid-column-start: 1;
+		grid-column-end: 3;
 		padding-top:10px;
+		display: grid;
+		grid-template-columns: 50% 50%;
 	}	
 	
 	#left div {
-		width:322px;
-		float:left;
 		margin-right:5px;
 		padding:2px;
   }
@@ -131,7 +130,7 @@ nav a {
 	
 
 #left div img {
-    width:320px;
+    width:100%;
 }
 
 
@@ -143,36 +142,30 @@ aside div {
 }
 
 aside#right {
-    width:30%;
-    float:left;	
+	grid-column-start: 3;
+	grid-column-end: 4;
 }	
 
 aside#right div {
     border-bottom:1px solid black;
 }
 
-
-
-
-
 /******** FOOTER *********/
 
 footer {
-		width:100%;
-		display: grid;
-		grid-area: footer;
-		grid-template-columns: 33.33% 33.33% 33.33%;
+	width:100%;
+	display: grid;
+	grid-area: footer;
+	grid-template-columns: 33.33% 33.33% 33.33%;
 }
 	
 footer > div {
     box-sizing: border-box;
-		
-		border-color:white;
-		border-width: 2px;
-		border-style: dotted;
-		background-color:#2e2e2e;
-		float:left;
-		height:300px;
+	border-color:white;
+	border-width: 2px;
+	border-style: dotted;
+	background-color:#2e2e2e;
+	height:300px;
 }
 
 #creditsfooter {
@@ -191,11 +184,10 @@ footer > div {
 
 
 #socialmedia > div {
-		float:right;
-		display:inline-block;
-		margin:5px;
-		height:20px;
-		margin-top:25px;
+	display:inline-block;
+	margin:5px;
+	height:20px;
+	margin-top:25px;
 }
 
 #menufooter ul {
@@ -203,8 +195,7 @@ footer > div {
 	list-style-type: none;
 	line-height: 40px;
 	text-transform: uppercase; 
-
-  padding:20px;
+  	padding:20px;
 }
 
 #menufooter img {
