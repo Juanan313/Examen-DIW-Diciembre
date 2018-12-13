@@ -19,10 +19,21 @@ h3 {
     font-size: 1.2em; 
     text-decoration: underline;
 }
+main {
+	grid-area: main;
+}
 
 	body {
 		max-width:1000px;
 		margin:auto;
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+  		grid-template-rows: auto;
+  		grid-template-areas: 
+	"header header header "
+	"nav nav nav"
+    "main main main"
+    "footer footer footer ";
 	}
 
 /********** HEADER **********/
@@ -31,7 +42,7 @@ h3 {
 		background-image: url(images2/logo.png);
 		background-repeat: no-repeat;
 		background-size: auto 100%;
-		
+		grid-area: header;
 		height:140px;
 		width:100%;
 	}	
@@ -53,6 +64,7 @@ h3 {
 nav {
   overflow: hidden;
   background-color: #333;
+  grid-area: nav;
 }
 
 nav a {
@@ -147,13 +159,14 @@ aside#right div {
 
 footer {
 		width:100%;
-		float:left;
+		display: grid;
+		grid-area: footer;
+		grid-template-columns: 33.33% 33.33% 33.33%;
 }
 	
 footer > div {
-		width:33.3%;
     box-sizing: border-box;
-    
+		
 		border-color:white;
 		border-width: 2px;
 		border-style: dotted;
